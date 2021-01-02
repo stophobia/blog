@@ -118,10 +118,22 @@ button::-moz-focus-inner {
   src: url("fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"), url("fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"), url("fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
 }
 @font-face {
-  font-family: CuteFont;
+  font-family: gaegulight;
   font-style: normal;
-  font-weight: normal;
-  src: url("fonts/EastSeaDokdo-Regular.ttf") format("truetype");
+  font-weight: 100;
+  src: url("fonts/Gaegu-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: gaeguregular;
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Gaegu-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: gaegubold;
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Gaegu-Bold.ttf") format("truetype");
 }
 html,
 body,
@@ -129,7 +141,7 @@ body,
   height: 100%;
 }
 body {
-  font: 20px CuteFont;
+  font: 20px gaegulight;
   -webkit-text-size-adjust: 100%;
 }
 .outer {
@@ -168,6 +180,9 @@ body {
 .mobile-nav-on {
   overflow: hidden;
 }
+a:visited {
+  color: #555;
+}
 #wrap {
   height: 100%;
   width: 100%;
@@ -202,7 +217,6 @@ body {
   margin-bottom: 1em;
   margin-left: 5px;
   line-height: 1em;
-  text-shadow: 0 1px #fff;
   font-weight: bold;
 }
 .article-inner,
@@ -367,7 +381,6 @@ body {
   color: #fff;
   opacity: 0.6;
   text-decoration: none;
-  text-shadow: 0 1px rgba(0,0,0,0.2);
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
@@ -498,7 +511,6 @@ body {
   float: left;
   line-height: 1em;
   color: #ccc;
-  text-shadow: 0 1px #fff;
   margin-left: 8px;
 }
 .article-category:before {
@@ -522,7 +534,7 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #258fb8;
+  color: #555;
 }
 .article-entry {
   color: #555;
@@ -559,7 +571,7 @@ a.article-title:hover {
   margin: 1.1em 0;
 }
 .article-entry a {
-  color: #258fb8;
+  color: #555;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -597,7 +609,6 @@ a.article-title:hover {
 }
 .article-entry blockquote {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.4em;
   margin: 1.6em 20px;
   text-align: center;
 }
@@ -654,14 +665,12 @@ a.article-title:hover {
   border-radius: 15px;
   background: #eee;
   color: #999;
-  text-shadow: 0 1px #fff;
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #258fb8;
+  background: #555;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #1e7293;
 }
 .article-footer {
   font-size: 0.85em;
@@ -740,7 +749,6 @@ a.article-title:hover {
 }
 .article-nav-link-wrap {
   text-decoration: none;
-  text-shadow: 0 1px #fff;
   color: #999;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -783,7 +791,6 @@ a.article-title:hover {
   margin-right: -2px;
 }
 .article-nav-title {
-  font-size: 0.85em;
   line-height: 1.6em;
   margin-top: 0.5em;
 }
@@ -825,6 +832,7 @@ a.article-title:hover {
 }
 .article-share-twitter,
 .article-share-facebook,
+.article-share-line,
 .article-share-pinterest,
 .article-share-linkedin {
   width: 50px;
@@ -835,6 +843,7 @@ a.article-title:hover {
 }
 .article-share-twitter:before,
 .article-share-facebook:before,
+.article-share-line:before,
 .article-share-pinterest:before,
 .article-share-linkedin:before {
   font-size: 20px;
@@ -850,6 +859,7 @@ a.article-title:hover {
 }
 .article-share-twitter:hover,
 .article-share-facebook:hover,
+.article-share-line:hover,
 .article-share-pinterest:hover,
 .article-share-linkedin:hover {
   color: #fff;
@@ -859,28 +869,30 @@ a.article-title:hover {
 }
 .article-share-twitter:hover {
   background: #00aced;
-  text-shadow: 0 1px #008abe;
 }
 .article-share-facebook:before {
   content: "\f09a";
 }
 .article-share-facebook:hover {
   background: #3b5998;
-  text-shadow: 0 1px #2f477a;
+}
+.article-share-line:before {
+  content: "\f3c0";
+}
+.article-share-line:hover {
+  background: #00b900;
 }
 .article-share-pinterest:before {
   content: "\f0d2";
 }
 .article-share-pinterest:hover {
   background: #cb2027;
-  text-shadow: 0 1px #a21a1f;
 }
 .article-share-linkedin:before {
   content: "\f0e1";
 }
 .article-share-linkedin:hover {
   background: #0077b5;
-  text-shadow: 0 1px #005f91;
 }
 .article-gallery {
   background: #000;
@@ -914,7 +926,7 @@ a.article-title:hover {
   margin: 50px 0;
 }
 #comments a {
-  color: #258fb8;
+  color: #555;
 }
 .archives-wrap {
   margin: 50px 0;
@@ -970,7 +982,7 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #258fb8;
+  color: #555;
 }
 .archive-article-footer {
   margin-top: 1em;
@@ -1042,7 +1054,7 @@ a.article-title:hover {
   color: #999;
 }
 #footer a {
-  color: #258fb8;
+  color: #555;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1075,12 +1087,10 @@ a.article-title:hover {
 }
 .article-entry code {
   background: #eee;
-  text-shadow: 0 1px #fff;
   padding: 0 0.3em;
 }
 .article-entry pre code {
   background: none;
-  text-shadow: none;
   padding: 0;
 }
 .article-entry .highlight pre {
@@ -1157,13 +1167,12 @@ a.article-title:hover {
   background: #2d2d2d;
   color: #999;
   font: 0.85em -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  text-shadow: 0 0;
   padding: 0;
   margin-top: 1em;
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #258fb8;
+  color: #555;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1261,14 +1270,13 @@ pre .javascript .function {
 }
 .widget {
   color: #777;
-  text-shadow: 0 1px #fff;
   background: color-widget-background;
   border: 1px solid color-widget-border;
   padding: 15px;
   border-radius: 3px;
 }
 .widget a {
-  color: #258fb8;
+  color: #555;
   text-decoration: none;
 }
 .widget a:hover {
@@ -1289,7 +1297,6 @@ pre .javascript .function {
 .widget {
   line-height: 1.6em;
   word-wrap: break-word;
-  font-size: 0.9em;
 }
 .widget ul,
 .widget ol {
@@ -1315,7 +1322,6 @@ pre .javascript .function {
 .archive-list-count {
   padding-left: 5px;
   color: #999;
-  font-size: 0.85em;
 }
 .category-list-count:before,
 .tag-list-count:before,
